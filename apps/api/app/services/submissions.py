@@ -1,22 +1,20 @@
-from datetime import datetime
+from datetime import datetime, timezone
 
 from sqlalchemy.orm import Session
 
 from app import storage
-from app.clock import server_now_naive
 from app.models import Lab, Student, Submission
 from app.schemas.submission import SubmissionCreate
+from app.services.deadlines import is_late
 
 
 class NotFound(Exception):
     """The lab or the student does not exist."""
 
 
-def mark_submission(submission: Submission, lab: Lab, at_utc: datetime | None = None) -> None:
-    """Marks a submission as late if it is after the deadline."""
-    submitted = server_now_naive(at_utc)
-    deadline = lab.deadline.replace(tzinfo=None)  # we compare the columns "as is"
-    submission.is_late = submitted > deadline
+def mark_submission(submission: Submission, lab: Lab) -> None:
+    """Marks a submission as late: only aware values (UTC) are compared."""
+    submission.is_late = is_late(submission.submitted_at, lab.deadline)
 
 
 def create_submission(db: Session, lab_id: int, payload: SubmissionCreate, data: bytes) -> Submission:
@@ -29,6 +27,7 @@ def create_submission(db: Session, lab_id: int, payload: SubmissionCreate, data:
     sub = Submission(
         lab_id=lab_id,
         student_id=payload.student_id,
+        submitted_at=datetime.now(timezone.utc),
         file_url=path.as_posix(),
         filename=payload.filename,
         size_bytes=len(data),
