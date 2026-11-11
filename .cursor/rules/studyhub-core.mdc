@@ -1,0 +1,15 @@
+---
+description: "General StudyHub conventions"
+alwaysApply: true
+---
+
+StudyHub is a service for tracking a department's lab assignments.
+Monorepo: apps/web (Next.js 15, TypeScript), apps/api (FastAPI, Python 3.12),
+packages/shared (shared types).
+
+- Respond in English; identifiers and code comments are in English as well.
+- Before changes in several files, propose a plan and wait for approval.
+- Do not modify migrations that have already been merged in apps/api/alembic/versions/: a new schema change means a new Alembic revision.
+- Do not add dependencies without explaining why they are needed.
+- Secrets, .env and students' personal data must not end up in prompts or logs.
+- All API paths have the /api/v1 prefix (it is set by app/main.py, not by individual routers).

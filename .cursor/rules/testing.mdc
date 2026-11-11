@@ -1,0 +1,12 @@
+---
+description: "How to write and run StudyHub tests: pytest, Vitest, Playwright"
+alwaysApply: false
+---
+
+- Backend: pytest, one test file per module in apps/api/tests; database fixtures – SQLite in-memory
+  (see tests/conftest.py).
+- Frontend: Vitest for hooks and pure functions; Playwright only for end-to-end scenarios.
+- First a failing test, then the code. Do not weaken or delete existing assertions
+  to make a test pass.
+- For time, use a fixed clock in the test, not the current time.
+- Before finishing, run the tests of the changed modules and report the result.

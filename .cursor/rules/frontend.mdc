@@ -1,0 +1,11 @@
+---
+description: "Next.js frontend conventions"
+globs: apps/web/**/*.tsx
+alwaysApply: false
+---
+
+- Server components by default; "use client" only where state is needed.
+- API data: component -> hook from apps/web/lib/hooks -> apps/web/lib/api.ts -> types from packages/shared.
+  There is no direct fetch in components.
+- Every form has labels, keyboard focus and error messages.
+- Example page with a form: @apps/web/app/labs/[id]/submit/page.tsx

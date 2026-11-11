@@ -1,0 +1,11 @@
+---
+description: "Security checklist for a change: roles, validation, secrets, personal data (attach via @security-checklist)"
+alwaysApply: false
+---
+
+Check the change against the list:
+- there are no secrets, tokens or real personal data in code, tests and fixtures;
+- every endpoint checks the role: a student sees only their own submissions;
+- input data is validated by a schema, and SQL is built through parameters;
+- the texts of students' work and their identifiers are not written to logs;
+- new dependencies have an explanation and a pinned version.

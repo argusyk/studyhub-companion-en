@@ -1,0 +1,13 @@
+---
+description: "FastAPI backend conventions"
+globs: apps/api/**/*.py
+alwaysApply: false
+---
+
+- Layers: routers (HTTP) call services (business logic), services work with the
+  SQLAlchemy Session. There is no separate repositories layer. A router contains no database queries.
+- Request and response schemas are Pydantic models in app/schemas/, ORM models are in app/models/.
+- All dates are stored as UTC (aware, type UtcDateTime); conversion to the department's
+  time zone is performed only at the API boundary.
+- Types are mandatory; the mypy check must pass without new ignores.
+- Endpoint example: @apps/api/app/routers/submissions.py
