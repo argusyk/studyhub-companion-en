@@ -19,16 +19,16 @@ def main() -> None:
     api = workspace_root(event) / "apps" / "api"
     try:
         proc = subprocess.run([sys.executable, "-m", "pytest", "-q", "-x", "-p", "no:cacheprovider"],
-                              cwd=api, capture_output=True, text=True, timeout=100)
+                              cwd=api, capture_output=True, encoding="utf-8", errors="replace", timeout=100)
     except subprocess.TimeoutExpired:
         print(json.dumps({"followup_message": "The fast tests did not finish within 100 s: shorten the set."},
-                         ensure_ascii=False))
+                         ))
         sys.exit(0)
     if proc.returncode not in (0, 5):  # 5 – no tests found
         tail = "\n".join((proc.stdout + proc.stderr).strip().splitlines()[-15:])
         print(json.dumps({"followup_message":
                           f"python -m pytest failed. Fix the cause without weakening the tests:\n{tail}"},
-                         ensure_ascii=False))
+                         ))
     sys.exit(0)
 
 

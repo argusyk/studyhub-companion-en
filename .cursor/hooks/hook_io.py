@@ -36,7 +36,8 @@ def workspace_root(event: dict | None = None) -> Path:
 
 
 def _emit(payload: dict, code: int = 0) -> None:
-    sys.stdout.write(json.dumps(payload, ensure_ascii=False))
+    # ASCII escaping: safe for any stdout code page on Windows
+    sys.stdout.write(json.dumps(payload))
     sys.stdout.flush()
     sys.exit(code)
 
