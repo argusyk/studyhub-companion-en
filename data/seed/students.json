@@ -1,0 +1,10 @@
+[
+  {"full_name": "Ivanenko Olena Petrivna", "group_code": "cs-21", "email": "ivanenko@example.test"},
+  {"full_name": "Shevchenko Andrii Ihorovych", "group_code": "cs-21", "email": "shevchenko@example.test"},
+  {"full_name": "Koval Maria Olehivna", "group_code": "cs-21", "email": "koval@example.test"},
+  {"full_name": "Bondarenko Dmytro Serhiiovych", "group_code": "cs-21", "email": "bondarenko@example.test"},
+  {"full_name": "Melnyk Iryna Vasylivna", "group_code": "pi-22a", "email": "melnyk@example.test"},
+  {"full_name": "Tkachenko Maksym Andriiovych", "group_code": "pi-22a", "email": "tkachenko@example.test"},
+  {"full_name": "Hrytsenko Sofia Mykolaivna", "group_code": "pi-22a", "email": "grytsenko@example.test"},
+  {"full_name": "Savchenko Bohdan Romanovych", "group_code": "pi-22a", "email": "savchenko@example.test"}
+]
