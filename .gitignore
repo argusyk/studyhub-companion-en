@@ -1,0 +1,37 @@
+# Secrets and local environment
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+apps/api/uploads/
+*.sqlite3
+*.db
+
+# Node / Next.js
+node_modules/
+.next/
+out/
+coverage/
+*.tsbuildinfo
+
+# Cursor: local hook logs
+.cursor/hooks/audit.log
+
+# Export data in the repository ROOT (dumps, CSVs with real data).
+# NOTE: anchoring to the root (/exports/) is deliberate. The pattern "exports/" without a slash
+# would also ignore the code in apps/api/app/exports/ (Chapter 13).
+/exports/
+/data/exports/
+/dumps/
+fixtures/real/
