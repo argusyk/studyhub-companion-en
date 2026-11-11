@@ -1,0 +1,68 @@
+{
+  "grades": [
+    {
+      "final": 60,
+      "lab": 1,
+      "late_days": 0,
+      "raw": 60,
+      "student": "Bondarenko D. S."
+    },
+    {
+      "final": null,
+      "lab": 3,
+      "late_days": 7,
+      "raw": 70,
+      "student": "Bondarenko D. S."
+    },
+    {
+      "final": 95,
+      "lab": 1,
+      "late_days": 0,
+      "raw": 95,
+      "student": "Ivanenko O. P."
+    },
+    {
+      "final": 88,
+      "lab": 2,
+      "late_days": 0,
+      "raw": 88,
+      "student": "Ivanenko O. P."
+    },
+    {
+      "final": 76,
+      "lab": 3,
+      "late_days": 1,
+      "raw": 85,
+      "student": "Ivanenko O. P."
+    },
+    {
+      "final": 100,
+      "lab": 1,
+      "late_days": 0,
+      "raw": 100,
+      "student": "Koval M. O."
+    },
+    {
+      "final": 91,
+      "lab": 2,
+      "late_days": 0,
+      "raw": 91,
+      "student": "Koval M. O."
+    },
+    {
+      "final": 82,
+      "lab": 1,
+      "late_days": 0,
+      "raw": 82,
+      "student": "Shevchenko A. I."
+    },
+    {
+      "final": 67,
+      "lab": 2,
+      "late_days": 1,
+      "raw": 74,
+      "student": "Shevchenko A. I."
+    }
+  ],
+  "group": "cs-21"
+}
