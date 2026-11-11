@@ -1,7 +1,7 @@
 import enum
 from datetime import datetime
 
-from sqlalchemy import CheckConstraint, Enum, ForeignKey, Integer, String, func
+from sqlalchemy import Boolean, CheckConstraint, Enum, ForeignKey, Integer, String, func
 from sqlalchemy.orm import Mapped, mapped_column
 
 from app.db.base import Base
@@ -40,3 +40,5 @@ class Submission(Base):
     )
     # The final published score (an integer 0..100); the source is Grade.final_score (Chapter 8).
     score: Mapped[int | None] = mapped_column(Integer, nullable=True)
+    # The "submitted late" flag, computed on submission (Chapter 10).
+    is_late: Mapped[bool] = mapped_column(Boolean, default=False, server_default="0")
