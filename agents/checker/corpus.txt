@@ -1,0 +1,1 @@
+During the work, a REST API in FastAPI was developed, input validation with Pydantic was implemented, and the core logic was covered with unit tests; the results are given in the table below.
