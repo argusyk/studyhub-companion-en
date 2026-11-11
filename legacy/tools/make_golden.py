@@ -13,6 +13,6 @@ from legacy.flask_app.app import app, seed_from_fixtures  # noqa: E402
 FIX = ROOT / "legacy" / "tests" / "fixtures"
 seed_from_fixtures(FIX / "group_cs21.json")
 resp = app.test_client().get("/api/groups/cs-21/grades")
-(FIX / "cs21_golden.json").write_text(
-    json.dumps(resp.get_json(), ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+with open(FIX / "cs21_golden.json", "w", encoding="utf-8", newline="\n") as fh:
+    fh.write(json.dumps(resp.get_json(), ensure_ascii=False, indent=2) + "\n")
 print("golden written, status", resp.status_code)
