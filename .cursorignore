@@ -1,0 +1,21 @@
+# Secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets/
+
+# Generated and heavy files
+node_modules/
+.next/
+dist/
+coverage/
+__pycache__/
+*.min.js
+
+# Data that may contain students' personal data
+fixtures/real/
+/exports/
+/data/exports/
+/dumps/
