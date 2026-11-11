@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { fetchLabs } from "../lib/api";
 
 export const dynamic = "force-dynamic";
@@ -17,7 +18,7 @@ export default async function Home() {
       <ul>
         {labs.map((lab) => (
           <li key={lab.id}>
-            Lab {lab.number}. {lab.title}
+            Lab {lab.number}. {lab.title} – <Link href={`/labs/${lab.id}/submit`}>submit</Link>
           </li>
         ))}
       </ul>

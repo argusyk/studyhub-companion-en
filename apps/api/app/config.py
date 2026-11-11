@@ -10,6 +10,7 @@ class Settings(BaseSettings):
     # For local development without Docker, a SQLite file is enough.
     database_url: str = "sqlite:///./studyhub_dev.sqlite3"
     department_tz: str = "Europe/Kyiv"
+    upload_dir: str = "uploads"
 
 
 @lru_cache

@@ -21,3 +21,5 @@ export interface Submission {
   score: number | null;
   is_late?: boolean; // appears in Chapter 10
 }
+
+export const MAX_UPLOAD_BYTES = 10 * 1024 * 1024;
