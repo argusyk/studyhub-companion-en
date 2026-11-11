@@ -1,0 +1,13 @@
+---
+description: "StudyHub design system: tokens and canonical UI components"
+globs: apps/web/**/*.tsx, apps/web/**/*.css
+alwaysApply: false
+---
+
+- Colors, spacing and radii are taken only from the tokens in apps/web/styles/tokens.css (the `--sh-*` variables).
+  Hex colors and "magic" px values in components are forbidden.
+- Status is conveyed by both color and text (accessibility); text contrast ≥ 4.5:1.
+- Canonical components: @apps/web/components/ui/StatCard.tsx, @apps/web/components/ui/StatusBadge.tsx.
+  New components are built on their pattern.
+- Time is displayed in department time (Europe/Kyiv) through apps/web/lib/deadline.ts.
+- Do not invent library APIs: if a method is not found in the types, check the documentation.
