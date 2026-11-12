@@ -1,12 +1,12 @@
 # StudyHub – the companion repository for the textbook
 
 The companion repository for the textbook "Developing with Cursor".
-Repository: [repository URL]. All data is invented; there are no real students or secrets here.
+Repository: https://github.com/argusyk/studyhub-companion-en. All data is invented; there are no real students or secrets here.
 
 StudyHub is a service for tracking a department's lab assignments: a student submits work, the instructor
 checks it and assigns a score, and sees group statistics. The repository is built so that each of the
 12 lab assignments of Appendix D has a **starting point** (the git tag `lab-N-start`).
-Reference solutions are kept in a separate private instructors' repository ([instructor repository URL]).
+Reference solutions are kept in a separate private instructors' repository (https://github.com/argusyk/studyhub-solutions).
 Each `lab-N-start` contains the state reached at the end of Lab N−1.
 
 ## Structure
